@@ -49,28 +49,28 @@ public abstract class Elemento {
 	public Coordinate nextPosizione(int x, int y) {
 		
 		switch (getDirezione()) {
-		case DESTRA:
-			x+=velocita;
-			break;
-			
-		case SINISTRA:
-			x-=velocita;
-			break;
-			
-		case SU:
-			y-=velocita;
-			break;
-			
-		case GIU:
-			y+=velocita;
-			break;
-			
-		case STOP:
-			break;
-
-		default:
-			break;
-		}
+			case DESTRA:
+				x+=velocita;
+				break;
+				
+			case SINISTRA:
+				x-=velocita;
+				break;
+				
+			case SU:
+				y-=velocita;
+				break;
+				
+			case GIU:
+				y+=velocita;
+				break;
+				
+			case STOP:
+				break;
+	
+			default:
+				break;
+			}
 		
 		return new Coordinate(x, y);
 		

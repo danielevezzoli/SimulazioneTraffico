@@ -25,9 +25,9 @@ public class Coordinate {
 		this.y = y;
 	} 
 	
-	public boolean isDentro(int l, int a) {
-		if(x<a && x>=0) {
-			if(y<l && y>=0) {
+	public boolean isDentro(int lunghezza, int altezza) {
+		if(x<altezza && x>=0) {
+			if(y<lunghezza && y>=0) {
 				return true;
 			}
 		}
