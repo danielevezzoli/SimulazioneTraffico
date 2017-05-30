@@ -6,8 +6,8 @@ public class Strada {
 	public final int LUNGHEZZA;
 	public final int ALTEZZA;
 
-	private int probAuto = 10;
-	private int probPedone = 30;
+	private int probAuto = 7;
+	private int probPedone = 15;
 
 	Elemento[][] mappa;
 

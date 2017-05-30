@@ -1,22 +1,24 @@
 package it.unibs.ing.fp.simulazionetraffico;
 
+import java.util.concurrent.TimeUnit;
 
 public class Simulazione {
 
-	public static void main(String[] args) {
-		Strada strada = new Strada(20,10); //Lunghezza, altezza
+	public static void main(String[] args) throws InterruptedException {
+		Strada strada = new Strada(50, 10); // Lunghezza, altezza
+		int timeSimulation = 400;// Millisecondi
 
-		for(int i=0; i<20; i++) {
+		for (; true;) {
 			strada.paintStrada();
 			strada.avanzaSimulazione();
 			clearScreen();
+			TimeUnit.MILLISECONDS.sleep(timeSimulation);
 		}
 
 	}
-	
-	
-	public static void clearScreen() {  
-	    System.out.print("\n\n\n\n\n\n\n\n");   
-	}  
+
+	public static void clearScreen() {
+		System.out.print("\n\n\n\n\n\n\n\n");
+	}
 
 }
