@@ -15,17 +15,21 @@ public class Strada {
 		LUNGHEZZA = l;
 		ALTEZZA = a;
 		mappa = new Elemento[ALTEZZA][LUNGHEZZA];
-		initStrada();
+		initStrada(mappa);
+		ingressoElementi();
 	}
 
-	public final void initStrada() {
+	public final void initStrada(Elemento e[][]) {
 		for (int r = 0; r < ALTEZZA; r++) {
 			for (int c = 0; c < LUNGHEZZA; c++) {
-				mappa[r][c] = new Vuoto();
+				e[r][c] = new Vuoto();
 			}
 		}
-		ingressoElementi();
 
+	}
+	
+	public void clearStrada(){
+		initStrada(this.mappa);
 	}
 
 	private Elemento generaAuto() {
@@ -66,11 +70,7 @@ public class Strada {
 	public void avanzaSimulazione() {
 		Elemento[][] copia = new Elemento[ALTEZZA][LUNGHEZZA];
 
-		for (int r = 0; r < ALTEZZA; r++) {
-			for (int c = 0; c < LUNGHEZZA; c++) {
-				copia[r][c] = new Vuoto();
-			}
-		}
+		initStrada(copia);
 
 		for (int r = 0; r < ALTEZZA; r++) {
 			for (int c = 0; c < LUNGHEZZA; c++) {
