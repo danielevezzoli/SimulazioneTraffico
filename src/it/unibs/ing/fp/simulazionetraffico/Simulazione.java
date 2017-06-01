@@ -1,21 +1,18 @@
 package it.unibs.ing.fp.simulazionetraffico;
 
-
-import javax.sound.midi.Soundbank;
-
 import it.unibs.fp.mylib.MyMenu;
 
-import java.util.concurrent.TimeUnit;
+
 
 public class Simulazione {
 
 	public static void main(String[] args) throws InterruptedException {
 		Strada strada = new Strada(20,10); //Lunghezza, altezza
-		int timeSimulation = 400;// Millisecondi
+		
 
 		
 		final String[] vociMenu = { "Nuova simulazione" , "Avanza simulazione" , "Azzera simulazione" };
-		MyMenu menu = new MyMenu("Clinica Medica", vociMenu);
+		MyMenu menu = new MyMenu("Simulazione traffico", vociMenu);
 		
 		boolean esci = false;
 		

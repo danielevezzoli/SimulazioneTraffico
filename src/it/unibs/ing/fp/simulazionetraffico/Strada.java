@@ -74,7 +74,16 @@ public class Strada {
 
 		for (int r = 0; r < ALTEZZA; r++) {
 			for (int c = 0; c < LUNGHEZZA; c++) {
-				if (!(mappa[r][c] instanceof Vuoto)) {
+				if ((mappa[r][c] instanceof Auto)) {
+					Coordinate coord = mappa[r][c].nextPosizione(c, r);
+					if (coord.isDentro(ALTEZZA, LUNGHEZZA)) {
+						copia[coord.getY()][coord.getX()] = mappa[r][c];
+					} else {
+						copia[r][c] = new Vuoto();
+					}
+				}
+				
+				if ((mappa[r][c] instanceof Pedone)) {
 					Coordinate coord = mappa[r][c].nextPosizione(c, r);
 					if (coord.isDentro(ALTEZZA, LUNGHEZZA)) {
 						copia[coord.getY()][coord.getX()] = mappa[r][c];
