@@ -33,12 +33,12 @@ public class Strada {
 	private Elemento generaAuto() {
 		Random r = new Random();
 		int num = r.nextInt(probAuto);
-		int v;
-		do {
-			v = (int) Math.abs(((r.nextGaussian()+2)));
-		}while(v==0);
+//		int v;
+//		do {
+//			v = (int) Math.abs(((r.nextGaussian()+2)));
+//		}while(v==0);
 		if (num == 1)
-			return new Auto(Direzione.DESTRA, v);
+			return new Auto(Direzione.DESTRA, 2);
 		else
 			return new Vuoto();
 

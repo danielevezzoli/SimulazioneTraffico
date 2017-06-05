@@ -6,7 +6,10 @@ public class Pedone extends Elemento {
 		super(_direzione, '*', _velocita);
 	}
 	public Pedone() {
-		super(Direzione.STOP, '*', 0);
+		super(Direzione.SU, '*', 0);
+	}
+	public boolean prevaleSu(Elemento e) {
+		return true;
 	}
 
 }

@@ -48,7 +48,7 @@ public abstract class Elemento {
 	
 	public Coordinate getProssimaPosizione(int x, int y) {
 		
-		switch (getDirezione()) {
+		switch (this.getDirezione()) {
 			case DESTRA:
 				x+=velocita;
 				break;
@@ -57,7 +57,7 @@ public abstract class Elemento {
 				x-=velocita;
 				break;
 				
-			case SU:
+			case SU: 
 				y-=velocita;
 				break;
 				

@@ -8,8 +8,15 @@ public class Auto extends Elemento {
 	}
 	
 	public Auto() {
-		super(Direzione.STOP, '>', 0);
+		super(Direzione.DESTRA, '>', 0);
 		
+	}
+	
+	public boolean prevaleSu(Elemento e) {
+		if(e instanceof Pedone)
+			return false;
+		else 
+			return true;
 	}
 
 }
