@@ -7,11 +7,11 @@ import it.unibs.fp.mylib.MyMenu;
 public class Simulazione {
 
 	public static void main(String[] args) throws InterruptedException {
-		Strada strada = new Strada(20,10); //Lunghezza, altezza
+		Strada strada = new Strada(10,5); //Lunghezza, altezza
 		
 
 		
-		final String[] vociMenu = { "Nuova simulazione" , "Avanza simulazione" , "Azzera simulazione" };
+		final String[] vociMenu = { "Nuova simulazione" , "Avanza simulazione" };
 		MyMenu menu = new MyMenu("Simulazione traffico", vociMenu);
 		
 		boolean esci = false;
@@ -25,11 +25,6 @@ public class Simulazione {
 					break;
 				case 2:
 					strada.avanzaSimulazione();
-					strada.paintStrada();
-					break;
-				case 3:
-					clearScreen();
-					strada.clearStrada();
 					strada.paintStrada();
 					break;
 				case 0:

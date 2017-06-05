@@ -6,5 +6,10 @@ public class Auto extends Elemento {
 		super(_direzione, '>', _velocita);
 		
 	}
+	
+	public Auto() {
+		super(Direzione.STOP, '>', 0);
+		
+	}
 
 }

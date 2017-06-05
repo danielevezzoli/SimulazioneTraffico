@@ -28,9 +28,7 @@ public class Strada {
 
 	}
 	
-	public void clearStrada(){
-		initStrada(this.mappa);
-	}
+
 
 	private Elemento generaAuto() {
 		Random r = new Random();
@@ -75,7 +73,7 @@ public class Strada {
 		for (int r = 0; r < ALTEZZA; r++) {
 			for (int c = 0; c < LUNGHEZZA; c++) {
 				if ((mappa[r][c] instanceof Auto)) {
-					Coordinate coord = mappa[r][c].nextPosizione(c, r);
+					Coordinate coord = mappa[r][c].getProssimaPosizione(c, r);
 					if (coord.isDentro(ALTEZZA, LUNGHEZZA)) {
 						copia[coord.getY()][coord.getX()] = mappa[r][c];
 					} else {
@@ -84,8 +82,11 @@ public class Strada {
 				}
 				
 				if ((mappa[r][c] instanceof Pedone)) {
-					Coordinate coord = mappa[r][c].nextPosizione(c, r);
+					Coordinate coord = mappa[r][c].getProssimaPosizione(c, r);
 					if (coord.isDentro(ALTEZZA, LUNGHEZZA)) {
+						if(copia[coord.getY()][coord.getX()] instanceof Auto ) {
+							System.out.println("Collisione in posizione: Asse X " + (coord.getX()+1) + " - Asse Y " + (ALTEZZA - coord.getY()) );
+						}
 						copia[coord.getY()][coord.getX()] = mappa[r][c];
 					} else {
 						copia[r][c] = new Vuoto();
@@ -104,6 +105,7 @@ public class Strada {
 	}
 
 	public void paintStrada() {
+
 		for (int c = 0; c < LUNGHEZZA; c++)
 			System.out.print("-");
 		System.out.println();

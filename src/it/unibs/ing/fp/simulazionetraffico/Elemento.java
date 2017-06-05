@@ -46,7 +46,7 @@ public abstract class Elemento {
 		return velocita;
 	}
 	
-	public Coordinate nextPosizione(int x, int y) {
+	public Coordinate getProssimaPosizione(int x, int y) {
 		
 		switch (getDirezione()) {
 			case DESTRA:

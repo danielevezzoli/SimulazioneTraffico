@@ -5,5 +5,8 @@ public class Pedone extends Elemento {
 	public Pedone(Direzione _direzione, int _velocita) {
 		super(_direzione, '*', _velocita);
 	}
+	public Pedone() {
+		super(Direzione.STOP, '*', 0);
+	}
 
 }
